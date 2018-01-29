@@ -39,10 +39,10 @@ $(document).ready(function () {
 			if (jqXHR.status == 200) {
 				$('.jumbotron').hide();
 				msg = response;
-				var html = '<div class="panel \
-panel-success"><div class="panel-heading"><h3 class="panel-title">' +
-					msg.username + \
-'</h3></div><div class="panel-body">' + msg.message + '</div></div>';
+				var html  = '<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title">'
+									+	msg.username
+									+ '</h3></div><div class="panel-body">' + msg.message + '</div></div>';
+
 				var d = $('.message-area');
 				d.append(html);
 				d.scrollTop(d.prop("scrollHeight"));
