@@ -2,9 +2,13 @@ var express = require("express");
 var fs = require('fs');
 var http = require('http');
 var path = require('path');
+var cfEnv = require("cf-env");
+var pkg   = require("./package.json");
+
+var cfCore = cfEnv.getCore({name: pkg.name});
 
 var app = express();
-app.set('port', 80);
+app.set('port', cfCore.port || 80);.
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
@@ -35,4 +39,5 @@ app.post('/msg', function(req, res) {
 	}
 	res.end();
 });
+
 
