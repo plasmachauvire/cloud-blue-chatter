@@ -8,7 +8,7 @@ var pkg   = require("./package.json");
 var cfCore = cfEnv.getCore({name: pkg.name});
 
 var app = express();
-app.set('port', cfCore.port || 80);.
+app.set('port', cfCore.port || 80);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
